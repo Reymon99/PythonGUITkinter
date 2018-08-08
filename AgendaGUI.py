@@ -1,7 +1,7 @@
 from tkinter import *
 
-def text(i):
-    print(i)
+def list(i):
+    lista.insert(END,i)
 
 f=Frame(cursor="mouse")
 f.pack(padx=15,pady=15)
@@ -20,7 +20,10 @@ autor.pack(side=TOP,padx=10,pady=10)
 campo=Entry(f,textvariable=5)
 campo.pack(side=TOP,padx=10,pady=10)
 
-button1=Button(f,text="Listar elementos de la agenda",command=lambda:text(Entry.get(campo)))
+button1=Button(f,text="Listar elementos de la agenda",command=lambda:list(Entry.get(campo)))
 button1.pack(side=BOTTOM,padx=10,pady=10)
+
+lista=Listbox(f)
+lista.pack(side=TOP,padx=10,pady=10)
 
 f.mainloop()
